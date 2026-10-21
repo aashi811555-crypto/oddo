@@ -1,0 +1,626 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Royal Events provides elegant wedding decoration, mandap design, event styling and catering services.">
+
+  <title>Royal Events | Celebrations Made Memorable</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  
+
+  <!-- Only Gallery folder styling -->
+  <style>
+    #gallery .category-grid .category-card {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 150px;
+      padding: 28px 18px 18px;
+      overflow: visible;
+      border: 1px solid rgba(176, 141, 87, 0.55);
+      border-radius: 3px 10px 10px 10px;
+      background: linear-gradient(145deg, #fffdf8, #f4ecdf);
+      box-shadow: 0 8px 22px rgba(45, 25, 35, 0.08);
+      color: #4c2638;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    #gallery .category-grid .category-card::before {
+      content: "";
+      position: absolute;
+      top: -9px;
+      left: -1px;
+      width: 76px;
+      height: 10px;
+      border: 1px solid rgba(176, 141, 87, 0.55);
+      border-bottom: 0;
+      border-radius: 6px 6px 0 0;
+      background: #f4ecdf;
+    }
+
+    #gallery .category-grid .category-card img,
+    #gallery .category-grid .category-card span,
+    #gallery .category-grid .category-card small {
+      display: none !important;
+    }
+
+    #gallery .category-grid .category-card strong {
+      display: block;
+      margin: 0;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(18px, 2vw, 25px);
+      font-weight: 500;
+      line-height: 1.3;
+      color: #4c2638;
+    }
+
+    #gallery .category-grid .category-card:hover {
+      background: linear-gradient(145deg, #f8f0e3, #ead9bd);
+      border-color: #b08d57;
+      transform: translateY(-2px);
+    }
+  </style>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="app.js" defer></script>
+</head>
+
+<body>
+
+  <!-- ANNOUNCEMENT BAR -->
+  <div class="announcement">
+    ✦ INDIAN WEDDINGS · ROYAL DECOR · BEAUTIFUL CELEBRATIONS ✦
+  </div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <a class="brand" href="#home">
+      <span class="brand-seal">S</span>
+      <span>
+        <strong>SHREE SHYAM EVENTS</strong>
+        <small>CELEBRATIONS & MEMORIES</small>
+      </span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+
+    <nav id="mainNav">
+      <a href="#home">Home</a>
+      <a href="#story">Our Story</a>
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#reviews">Client Reviews</a>
+      <a class="nav-cta" href="#contact">Let's Talk ↗</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow">WEDDINGS · TRADITION · CELEBRATIONS</p>
+
+        <h1>Every Celebration Deserves a <em>Royal Touch.</em></h1>
+
+        <p class="hero-description">
+          From traditional Indian mandaps and beautiful floral stages to
+          birthdays, engagements and family celebrations, we help make
+          your special moments unforgettable.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button button-primary" href="#contact">Plan Your Event ↗</a>
+          <a class="button button-outline" href="#gallery">Explore Our Work</a>
+        </div>
+
+        <p class="handwritten">✧ Thoughtfully styled. Beautifully remembered.</p>
+      </div>
+
+      <div class="hero-visual">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+
+        <div class="hero-photo">
+          <img
+            src="royal img.jpg"
+            alt="Elegant wedding celebration and floral decoration">
+        </div>
+
+        <div class="photo-note">
+          <span>THE ART OF CELEBRATION</span>
+          <strong>Made memorable, with love.</strong>
+        </div>
+
+        <span class="vertical-note">YOUR DAY · YOUR STORY · OUR CRAFT</span>
+      </div>
+
+      <a class="discover" href="#story">DISCOVER MORE ↓</a>
+    </section>
+
+    <!-- MOVING BANNER -->
+    <div class="moving-banner" aria-label="Royal Events services">
+      <div class="moving-track">
+        <span>✦ WEDDING DECOR</span>
+        <span>✦ DREAM MANDAPS</span>
+        <span>✦ FLORAL DESIGN</span>
+        <span>✦ CATERING</span>
+        <span>✦ BEAUTIFUL MEMORIES</span>
+        <span>✦ WEDDING DECOR</span>
+        <span>✦ DREAM MANDAPS</span>
+        <span>✦ FLORAL DESIGN</span>
+        <span>✦ CATERING</span>
+        <span>✦ BEAUTIFUL MEMORIES</span>
+      </div>
+    </div>
+
+    <!-- OUR STORY -->
+    <section class="story section" id="story">
+      <div class="story-image">
+        <img
+            src="bride.jpg"
+            alt="Beautiful Indian Bride" >
+
+        <div class="image-stamp">MADE WITH<br><em>LOVE</em> ♡</div>
+      </div>
+
+      <div class="story-copy">
+        <p class="eyebrow">A LITTLE ABOUT US</p>
+
+        <h2>Not just an event.<br><em>A feeling that stays.</em></h2>
+
+        <p>
+          At Royal Events, every celebration begins with your story.
+          We bring together thoughtful planning, elegant décor and
+          beautiful details to create a setting that feels truly yours.
+        </p>
+
+        <p>
+          From traditional mandap designs to intimate family gatherings,
+          our goal is to make every occasion warm, graceful and memorable.
+        </p>
+
+        <a href="#contact" class="text-link">
+          LET'S CREATE SOMETHING BEAUTIFUL ↗
+        </a>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services section" id="services">
+      <div class="section-heading">
+        <p class="eyebrow">WHAT WE CREATE</p>
+        <h2>Celebrations, <em>beautifully imagined.</em></h2>
+        <p>Thoughtful details for life's most meaningful occasions.</p>
+      </div>
+
+      <div class="service-grid">
+
+        <article class="service-card">
+          <img src="Wedding & Mandap.jpg" alt="Wedding décor">
+          <div>
+            <span>01 / THE BIG DAY</span>
+            <h3>Wedding</h3>
+            <p>Traditional charm, floral elegance and a beautiful setting for your vows.</p>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <img src="Birthday.jpg" alt="Birthday celebration">
+          <div>
+            <span>02 / MAKE A WISH</span>
+            <h3>Birthday Parties</h3>
+            <p>Joyful themes, colourful details and celebrations full of personality.</p>
+          </div>
+        </article>
+
+<!-- OTHER EVENTS CARD -->
+<article class="service-card">
+  <img
+    src="mandap.jpg"
+    alt="Other events and celebration decoration">
+
+  <div>
+    <span>03 / EVERY OCCASION</span>
+    <h3>Mandap</h3>
+    <p>Beautiful decorations and thoughtful arrangements for family gatherings, festivals and all your special occasions.</p>
+  </div>
+</article>
+
+        
+        </article>
+
+        <article class="service-card">
+          <img src="Baby Shower.jpg" alt="Celebration venue">
+          <div>
+            <span>04 / LITTLE MIRACLES</span>
+            <h3>Baby Shower</h3>
+            <p>Soft colours, charming backdrops and sweet celebration details.</p>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <img src="Engagement.jpg" alt="Engagement celebration">
+          <div>
+            <span>05 / A FEAST TO REMEMBER</span>
+            <h3>Engagement</h3>
+            <p>Delicious food and welcoming arrangements for your guests.</p>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <img src="Anniversary.jpg" alt="Anniversary celebration">
+          <div>
+            <span>06 / EVERY DETAIL</span>
+            <h3>Anniversary</h3>
+            <p>Floral installations, stage décor and finishing touches for your vision.</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- GALLERY: FOLDER-STYLE CATEGORIES -->
+    <section class="gallery section" id="gallery">
+      <div class="section-heading">
+        <p class="eyebrow">A GALLERY OF MEMORIES</p>
+        <h2>Little details. <em>Lasting impressions.</em></h2>
+        <p>Choose an occasion to explore its photographs.</p>
+      </div>
+
+      <div class="category-grid" id="categoryGrid">
+
+        <button class="category-card" data-category="Wedding" type="button">
+          <strong>Wedding</strong>
+        </button>
+
+        <button class="category-card" data-category="Birthday" type="button">
+          <strong>Birthday</strong>
+        </button>
+
+        <button class="category-card" data-category="Engagement" type="button">
+          <strong>Engagement</strong>
+        </button>
+
+        <button class="category-card" data-category="Baby Shower" type="button">
+          <strong>Baby Shower</strong>
+        </button>
+
+        <button class="category-card" data-category="Anniversary" type="button">
+          <strong>Anniversary</strong>
+        </button>
+
+        <button class="category-card" data-category="Mandap" type="button">
+          <strong>Mandap</strong>
+        </button>
+
+      </div>
+
+      <!-- EXISTING GALLERY RESULTS -->
+      <div class="gallery-results" id="galleryResults" hidden>
+        <div class="gallery-results-heading">
+          <div>
+            <p class="eyebrow">SELECTED COLLECTION</p>
+            <h3 id="selectedCategory">Wedding</h3>
+          </div>
+
+          <button id="closeGallery" class="button button-outline" type="button">
+            ← All categories
+          </button>
+        </div>
+
+        <p id="galleryMessage" class="gallery-message">Loading photographs...</p>
+        <div class="photo-grid" id="photoGrid"></div>
+      </div>
+    </section>
+
+    <!-- QUOTE BANNER -->
+    <section class="quote-band">
+      <p class="eyebrow">YOUR MOMENT. OUR PASSION.</p>
+      <h2>Some days deserve to be<br><em>remembered forever.</em></h2>
+      <a class="button button-light" href="#contact">Let's Plan Your Celebration ↗</a>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="reviews section" id="reviews">
+      <div class="section-heading">
+        <p class="eyebrow">KIND WORDS</p>
+        <h2>Memories made. <em>Stories shared.</em></h2>
+        <p>Replace these example cards with feedback from your actual clients.</p>
+      </div>
+
+      <div class="review-grid">
+        <article class="review-card">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p>“The decoration looked beautiful, and all the little details came together so well. The whole setting felt warm and special.”</p>
+          <div class="review-person">
+            <span>R</span>
+            <div><strong>Wedding Client</strong><small>Example review · 5/5</small></div>
+          </div>
+        </article>
+
+        <article class="review-card">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p>“We wanted an elegant celebration with a personal touch. The floral styling and stage arrangement made the occasion feel lovely.”</p>
+          <div class="review-person">
+            <span>S</span>
+            <div><strong>Event Client</strong><small>Example review · 5/5</small></div>
+          </div>
+        </article>
+
+        <article class="review-card">
+          <div class="stars" aria-label="4 out of 5 stars">★★★★☆</div>
+          <p>“The theme was colourful and thoughtfully arranged. It gave our family celebration a lovely atmosphere.”</p>
+          <div class="review-person">
+            <span>A</span>
+            <div><strong>Celebration Client</strong><small>Example review · 4/5</small></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact section" id="contact">
+      <div class="contact-copy">
+        <p class="eyebrow">LET'S MAKE IT MEMORABLE</p>
+        <h2>Your dream day starts <em>with a conversation.</em></h2>
+        <p>Tell us about your occasion, your ideas and the details that matter to you.</p>
+
+        <div class="contact-detail">
+          <span>✦</span>
+          <div>
+            <strong>Made for your occasion</strong>
+            <small>Décor · Planning · Catering</small>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <span>✦</span>
+          <div>
+            <strong>Let's create something special</strong>
+            <small>Every celebration begins with a hello.</small>
+          </div>
+        </div>
+      </div>
+
+      <form class="contact-form" id="contactForm">
+        <label for="clientName">Your name</label>
+        <input id="clientName" name="name" required placeholder="Enter your name">
+
+        <label for="clientPhone">Phone / WhatsApp</label>
+        <input id="clientPhone" name="phone" required inputmode="tel" placeholder="Enter your phone number">
+
+        <label for="eventType">Your occasion</label>
+        <select id="eventType" name="event" required>
+          <option value="">Select an occasion</option>
+          <option>Wedding</option>
+          <option>Birthday</option>
+          <option>Baby Shower</option>
+          <option>Engagement</option>
+          <option>Anniversary</option>
+          <option>Catering</option>
+          <option>Mandap</option>
+        </select>
+
+        <label for="eventMessage">Tell us a little more</label>
+        <textarea id="eventMessage" name="message" rows="4" placeholder="Event date, location or ideas (optional)"></textarea>
+
+        <button class="button button-primary" type="submit">Enquire on WhatsApp ↗</button>
+        <p class="form-note" id="contactStatus">Your enquiry will open in WhatsApp for you to send.</p>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+
+    <div class="footer-brand-block">
+      <a class="footer-brand" href="#home">ROYAL EVENTS</a>
+      <p>Thoughtfully styled. Beautifully remembered.</p>
+      <p class="footer-description">
+        Elegant wedding decorations, royal mandap designs,
+        event styling and catering for life's special occasions.
+      </p>
+
+<div class="social-links">
+    <a id="instagramLink"
+       href="https://www.instagram.com/"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Instagram">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="5"
+                  fill="none" stroke="currentColor" stroke-width="2"/>
+            <circle cx="12" cy="12" r="4"
+                    fill="none" stroke="currentColor" stroke-width="2"/>
+            <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/>
+        </svg>
+    </a>
+
+    <a id="facebookLink"
+       href="https://www.facebook.com/"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Facebook">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor"
+                  d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.7V3.9c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V10H7.3v3h2.8v8z"/>
+        </svg>
+    </a>
+
+    <a id="whatsappLink"
+       href="https://wa.me/"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="none" stroke="currentColor" stroke-width="2"
+                  d="M20 11.7a8 8 0 0 1-11.8 7L4 20l1.3-4A8 8 0 1 1 20 11.7Z"/>
+            <path fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round"
+                  d="M9 8.5c.5 3 2.5 5 5.5 5.5l1.2-1.3-2-1-1 1c-1.1-.5-2-1.4-2.5-2.5l1-1-1-2z"/>
+        </svg>
+    </a>
+</div>
+</div> <!-- footer-brand-block ka closing tag -->
+
+    <div class="footer-column">
+      <h3>Quick Links</h3>
+      <a href="#home">Home</a>
+      <a href="#story">Our Story</a>
+      <a href="#services">Our Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#reviews">Client Reviews</a>
+      <a href="#contact">Contact Us</a>
+    </div>
+
+    <div class="footer-column">
+      <h3>Our Services</h3>
+      <a href="#services">Wedding Decorations</a>
+      <a href="#services">Royal Mandap Designs</a>
+      <a href="#services">Birthday Celebrations</a>
+      <a href="#services">Engagements</a>
+      <a href="#services">Anniversaries</a>
+      <a href="#services">Baby Shower</a>
+      <a href="#services">Catering</a>
+      <a href="#services">Event Styling</a>
+    </div>
+
+    <div class="footer-column footer-contact">
+      <h3>Get in Touch</h3>
+      <p>Planning something special?</p>
+      <a href="#contact">Get a Free Quote ↗</a>
+      <a href="mailto:YOUR_EMAIL@example.com">Email Us ↗</a>
+      <a href="https://wa.me/91YOURNUMBER"
+         target="_blank" rel="noopener noreferrer">
+        WhatsApp Enquiry ↗
+      </a>
+      <p class="footer-note">
+        Let's turn your celebration into a beautiful memory.
+      </p>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Royal Events. All rights reserved.</span>
+
+      <div class="footer-admin">
+        <a href="admin.html">Admin Panel ↗</a>
+        <a href="#home">Back to top ↑</a>
+      </div>
+
+      <p class="developer-credit">
+        Developed by <strong>Ashutosh Kumar Pathak</strong>
+      </p>
+    </div>
+
+  </footer>
+
+  <!-- EXISTING GALLERY LIGHTBOX -->
+  <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Gallery photo">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close photo">×</button>
+    <img id="lightboxImage" src="" alt="Selected event photograph">
+  </div>
+  
+
+<script>
+(function () {
+  const gallery = document.getElementById("galleryResults");
+  const folders = document.getElementById("categoryGrid");
+  const lightbox = document.getElementById("lightbox");
+  const closeGallery = document.getElementById("closeGallery");
+  const closePhoto = document.getElementById("lightboxClose");
+
+  if (!gallery || !folders || !lightbox) return;
+
+  let galleryStateAdded = false;
+  let photoStateAdded = false;
+  let handlingBack = false;
+
+  function isGalleryOpen() {
+    return !gallery.hidden;
+  }
+
+  function isPhotoOpen() {
+    return !lightbox.hidden;
+  }
+
+  function watchVisibility(element, callback) {
+    new MutationObserver(callback).observe(element, {
+      attributes: true,
+      attributeFilter: ["hidden"]
+    });
+  }
+
+  // Open folder collection: create one browser history step.
+  watchVisibility(gallery, function () {
+    if (isGalleryOpen() && !galleryStateAdded && !handlingBack) {
+      history.pushState(
+        { royalGallery: true },
+        "",
+        location.pathname + location.search + "#gallery"
+      );
+      galleryStateAdded = true;
+    }
+  });
+
+  // Open single photo: create another history step.
+  watchVisibility(lightbox, function () {
+    if (isPhotoOpen() && !photoStateAdded && !handlingBack) {
+      history.pushState(
+        { royalPhoto: true },
+        "",
+        location.pathname + location.search + "#gallery-photo"
+      );
+      photoStateAdded = true;
+    }
+  });
+
+  // Back order: photo -> folders -> previous website page.
+  window.addEventListener("popstate", function () {
+    handlingBack = true;
+
+    if (isPhotoOpen()) {
+      if (closePhoto) {
+        closePhoto.click();
+      } else {
+        lightbox.hidden = true;
+      }
+
+      photoStateAdded = false;
+    } else if (isGalleryOpen()) {
+      if (closeGallery) {
+        closeGallery.click();
+      } else {
+        gallery.hidden = true;
+        folders.hidden = false;
+      }
+
+      galleryStateAdded = false;
+
+      folders.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }
+
+    setTimeout(function () {
+      handlingBack = false;
+    }, 0);
+  });
+
+})();
+</script>
+</body>
+</html>

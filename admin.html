@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Royal Events | Admin</title>
+
+  <link rel="stylesheet" href="admin.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="admin.js" defer></script>
+</head>
+
+<body>
+  <header class="admin-header">
+    <a href="index.html">← View Website</a>
+    <h1>SHREE SHYAMM EVENTS <span>Admin</span></h1>
+    <button id="logoutButton" type="button" hidden>
+      Log out
+    </button>
+  </header>
+
+  <main class="admin-main">
+
+    <!-- ADMIN LOGIN -->
+    <section class="admin-panel" id="loginPanel">
+      <p class="eyebrow">PRIVATE DASHBOARD</p>
+      <h2>Admin Login</h2>
+
+      <form id="loginForm">
+        <label for="adminEmail">Email</label>
+        <input
+          id="adminEmail"
+          type="email"
+          required
+          autocomplete="username"
+        >
+
+        <label for="adminPassword">Password</label>
+        <input
+          id="adminPassword"
+          type="password"
+          required
+          autocomplete="current-password"
+        >
+
+        <button type="submit">Sign in</button>
+      </form>
+
+      <p id="loginStatus" role="status"></p>
+    </section>
+
+    <!-- GALLERY DASHBOARD -->
+    <section class="admin-panel" id="dashboardPanel" hidden>
+      <p class="eyebrow">GALLERY MANAGEMENT</p>
+      <h2>Upload Photographs</h2>
+
+      <p class="admin-description">
+        Select multiple photographs, choose a folder and category,
+        and upload them together to your Royal Events gallery.
+      </p>
+
+      <form id="photoForm">
+
+        <!-- MULTIPLE PHOTOS -->
+        <label for="photoFiles">Choose Photos</label>
+        <input
+          id="photoFiles"
+          type="file"
+          accept="image/jpeg,image/png,image/webp,image/gif"
+          multiple
+          required
+        >
+
+        <small class="admin-help">
+          You can select multiple photos at once.
+        </small>
+
+        <div id="selectedPhotos" class="selected-photos">
+          No photos selected.
+        </div>
+
+        <!-- STORAGE FOLDER -->
+        <label for="photoFolder">Folder Name</label>
+        <input
+          id="photoFolder"
+          type="text"
+          list="folderSuggestions"
+          placeholder="e.g. wedding"
+          value="wedding"
+          required
+          maxlength="60"
+          pattern="[A-Za-z0-9_-]+"
+          title="Use letters, numbers, hyphens or underscores only."
+        >
+
+        <datalist id="folderSuggestions">
+          <option value="wedding">
+          <option value="birthday">
+          <option value="engagement">
+          <option value="baby-shower">
+          <option value="anniversary">
+          <option value="catering">
+          <option value="mandap">
+        </datalist>
+
+        <small class="admin-help">
+          Folder names can contain letters, numbers, hyphens and underscores.
+          Example: wedding
+        </small>
+
+        <!-- WEBSITE GALLERY CATEGORY -->
+        <label for="photoCategory">Gallery Category</label>
+        <select id="photoCategory" required>
+          <option value="Wedding">Wedding</option>
+          <option value="Birthday">Birthday</option>
+          <option value="Engagement">Engagement</option>
+          <option value="Baby Shower">Baby Shower</option>
+          <option value="Anniversary">Anniversary</option>
+          <option value="Catering">Catering</option>
+          <option value="Mandap">Mandap Design</option>
+        </select>
+
+        <button id="uploadButton" type="submit">
+          Upload All Photos
+        </button>
+      </form>
+
+      <p id="adminStatus" role="status" aria-live="polite"></p>
+
+      <div class="admin-list-heading">
+        <h2>Existing Photographs</h2>
+
+        <button
+          id="refreshButton"
+          type="button"
+          class="secondary-button"
+        >
+          Refresh
+        </button>
+      </div>
+
+      <div id="adminGallery"></div>
+    </section>
+
+  </main>
+</body>
+</html>
